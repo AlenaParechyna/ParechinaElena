@@ -43,10 +43,12 @@ public class Hotel {
         //System.out.println(  );
         //roomDao.showAll();
         //System.out.println();
-        roomDao.showAllFree();
-        System.out.println();
+       // roomDao.showAllFree();
+        //System.out.println();
         //orderDao.getAll();
-        roomDao.sortAs();
+       // roomDao.sortAs();
+
+        //roomDao.howMuchFreeRoom();
 
 
 

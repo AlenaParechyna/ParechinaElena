@@ -1,12 +1,9 @@
 package com.senla.model;
 
-import com.senla.dao.RoomDao;
-
-import java.time.Instant;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.stream.Stream;
+import java.util.List;
 
 public class Order extends AEntity {
 
@@ -16,7 +13,30 @@ public class Order extends AEntity {
     LocalDate dateCheckIn;
     Long howMuchDays;
     LocalDate dateCheckOut;
-    Maintenance[] maintenance = new Maintenance[10];
+
+    public List<Maintenance> getMaintenance() {
+        return maintenance;
+    }
+
+    public void setMaintenance(List<Maintenance> maintenance) {
+        this.maintenance = maintenance;
+    }
+
+    List <Maintenance>  maintenance = new ArrayList<Maintenance>() {
+    };
+
+    public Order() {
+
+    }
+
+    public Order(Guest guest, Room room, LocalDate dateCheckIn, Long howMuchDays, LocalDate dateCheckOut, List<Maintenance> maintenance) {
+        this.guest = guest;
+        this.room = room;
+        this.dateCheckIn = dateCheckIn;
+        this.howMuchDays = howMuchDays;
+        this.dateCheckOut = dateCheckOut;
+        this.maintenance = maintenance;
+    }
 
     public Guest getGuest() {
         return guest;
@@ -49,7 +69,6 @@ public class Order extends AEntity {
     public void setHowMuchDays(Long howMuchDays) {
         this.howMuchDays = howMuchDays;
     }
-
     public LocalDate getDateCheckOut() {
 
         return dateCheckOut;
@@ -58,23 +77,6 @@ public class Order extends AEntity {
     public void setDateCheckOut(LocalDate dateCheckOut) {
         dateCheckOut = dateCheckIn.plusDays(howMuchDays);
         this.dateCheckOut = dateCheckOut;
-    }
-
-    public Maintenance[] getMaintenance() {
-        return maintenance;
-    }
-
-    public void setMaintenance(Maintenance[] maintenance) {
-        this.maintenance = maintenance;
-    }
-
-    public Order(Guest guest, Room room, LocalDate dateCheckIn, Long howMuchDays, LocalDate dateCheckOut, Maintenance[] maintenance) {
-        this.guest = guest;
-        this.room = room;
-        this.dateCheckIn = dateCheckIn;
-        this.howMuchDays = howMuchDays;
-        this.dateCheckOut = dateCheckOut;
-        this.maintenance = maintenance;
     }
 
     @Override

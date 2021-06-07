@@ -8,6 +8,9 @@ public interface IRoomDao extends IGenericDao<Room> {
 
      void sortAs();
 
+     void howMuchFreeRoom();
+
+
 
 
 }

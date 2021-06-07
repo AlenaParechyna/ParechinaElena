@@ -17,4 +17,6 @@ public interface IGenericDao <T extends AEntity>{
    T update (T entity);
 
     void showAll();
+
+   void howPrice();
 }

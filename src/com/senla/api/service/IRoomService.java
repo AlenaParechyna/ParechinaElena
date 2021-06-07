@@ -13,4 +13,6 @@ public interface IRoomService extends IGenericDao<Room> {
     void evictGuest(Long guestId);
 
 
+
+
 }

@@ -10,6 +10,8 @@ import java.util.List;
 
 public class GuestDao extends AbstractDao<Guest> implements IGuestDao {
 
+    List<Guest> guestList = getRepository();
+
 
     public GuestDao() {
     }
@@ -21,7 +23,7 @@ public class GuestDao extends AbstractDao<Guest> implements IGuestDao {
 
     @Override
     public void save(Guest entity) {
-        getRepository().add(entity);
+       guestList.add(entity);
     }
 
     @Override
@@ -31,18 +33,32 @@ public class GuestDao extends AbstractDao<Guest> implements IGuestDao {
 
     @Override
     public List<Guest> getAll() {
-        for (int i = 0; i < getRepository().size(); i++) {
-            System.out.println(getRepository().get(i));
+        for (int i = 0; i < guestList.size(); i++) {
+            System.out.println(guestList.get(i));
         }
         return super.getAll();
+    }
+
+    @Override
+    public void howPrice() {
+
     }
 
 
     @Override
     public void sortedAs() {
-        SortedAs sortedAs = new SortedAs();
-        //sortedAs.compName;
+
     }
+
+    public void howMuchGuest(){
+        for (int i = 0; i < guestList.size(); i++) {
+
+            System.out.println( "Всего гостей " + guestList.stream().count());
+        }
+    }
+
+
+
 }
 
 

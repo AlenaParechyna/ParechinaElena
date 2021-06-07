@@ -3,9 +3,12 @@ package com.senla.service;
 import com.senla.api.dao.IGuestDao;
 import com.senla.api.dao.IRoomDao;
 import com.senla.api.service.IRoomService;
+import com.senla.dao.RoomDao;
 import com.senla.model.Guest;
 import com.senla.model.Room;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class RoomService implements IRoomService {
@@ -35,9 +38,7 @@ public class RoomService implements IRoomService {
 
     @Override
     public void save(Room entity) {
-
     }
-
     @Override
     public Room getById(Long id) {
         return null;
@@ -60,6 +61,12 @@ public class RoomService implements IRoomService {
 
     @Override
     public void showAll() {
+
+
+    }
+
+    @Override
+    public void howPrice() {
 
     }
 }

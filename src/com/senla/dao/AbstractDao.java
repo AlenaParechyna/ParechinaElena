@@ -59,7 +59,10 @@ public abstract class AbstractDao<T extends AEntity> implements IGenericDao<T> {
             System.out.println(repository.toString());
 
         }
-    }
+
+
+            }
+
 
 
 }
