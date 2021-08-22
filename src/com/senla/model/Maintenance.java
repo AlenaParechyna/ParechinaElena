@@ -13,6 +13,10 @@ public class Maintenance extends AEntity{
     private Double price;
     private Long id;
 
+    public Maintenance() {
+
+    }
+
     public LocalDate getDate() {
         return date;
     }

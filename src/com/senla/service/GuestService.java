@@ -15,8 +15,8 @@ public class GuestService implements IGuestService {
 
 
     @Override
-    public Guest addGuest(String name, Integer age) {
-        Guest guest = new Guest(name, age);
+    public Guest addGuest(Long id, String name, Integer age) {
+        Guest guest = new Guest(id, name, age);
         guest.setId(IdGenerator.generateGuestId());
         guestDao.save(guest);
         return guest;

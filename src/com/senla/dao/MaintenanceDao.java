@@ -2,8 +2,10 @@ package com.senla.dao;
 
 import com.senla.api.dao.IMaintenanceDao;
 import com.senla.model.Maintenance;
+import com.senla.util.IdGenerator;
 import com.senla.util.SortedAs;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +13,15 @@ public class MaintenanceDao extends AbstractDao <Maintenance> implements IMainte
 
 List<Maintenance>maintenances = getRepository();
 SortedAs sortedAs = new SortedAs();
+
+
+
+{maintenances.add(new Maintenance("Cleaning", 15.5));
+maintenances.add(new Maintenance("Minibar", 35.0));
+maintenances.add(new Maintenance("Cleaning clothes", 10.0));
+maintenances.add(new Maintenance("Booking tickets", 8.2));
+
+}
 
     @Override
     public void save(Maintenance entity) {
@@ -24,12 +35,12 @@ SortedAs sortedAs = new SortedAs();
 
     @Override
     public Maintenance update(Maintenance entity) {
-        return null;
+        return entity;
     }
 
-    @Override
+
     public void howPrice() {
-        maintenances.sort(sortedAs.compPriceM);
+        maintenances.sort(sortedAs.comparePriceMaintenance);
         for (int i=0; i<maintenances.size(); i++){
 
             System.out.println("Цены комнат " + maintenances.get(i).getPrice());
@@ -39,13 +50,13 @@ SortedAs sortedAs = new SortedAs();
 
 
     @Override
-    public void sortAll() {
+    public List <Maintenance> sortAll() {
         List<Maintenance>maintenanceList = new ArrayList<>();
         SortedAs c = new SortedAs();
-        maintenanceList.sort(c.compDateM);
-        maintenanceList.sort(c.compPriceM);
 
+        maintenanceList.sort(c.compareDateMaintenance);
+        maintenanceList.sort(c.comparePriceMaintenance);
 
-
+        return maintenanceList;
     }
 }

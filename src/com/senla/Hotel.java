@@ -15,44 +15,46 @@ import com.senla.service.GuestService;
 import com.senla.service.RoomService;
 import com.senla.util.SortedAs;
 
+import java.awt.*;
 import java.lang.reflect.Array;
+import java.util.logging.Logger;
 
 public class Hotel {
+
+    private static Logger logger = Logger.getLogger(Hotel.class.getName());
+
+
+
 
     private static final IGuestDao guestDao = new GuestDao();
     private static final IGuestService guestService = new GuestService(guestDao);
 
 
-    private static final IRoomDao roomDao = new RoomDao();
+    public static final IRoomDao roomDao = new RoomDao();
     private static final IRoomService roomService = new RoomService(roomDao, guestDao);
 
 
     public static void main(String[] args) {
 
-        SortedAs sortedAs = new SortedAs();
 
-        Guest guest1 = guestService.addGuest("Вася", 30);
-        Guest guest2 = guestService.addGuest("Игорь", 20);
-        Guest guest3 = guestService.addGuest("Коля", 22);
-        Guest guest4 = guestService.addGuest("Света", 25);
-
-        OrderDao orderDao = new OrderDao();
+        System.out.println(guestDao.getAll());
+        System.out.println(roomDao.getAll());
 
 
-        //guestDao.getAll();
-        //System.out.println(  );
-        //roomDao.showAll();
-        //System.out.println();
-       // roomDao.showAllFree();
-        //System.out.println();
-        //orderDao.getAll();
-       // roomDao.sortAs();
 
-        //roomDao.howMuchFreeRoom();
+/*
+        Room r = roomDao.getAllFree().stream().findFirst().get();
+            r.setGuests(guest1);
+            r.setStatus(RoomStatus.OCCUPIED);
+            System.out.println(r.getId());
+            System.out.println(r.toString());*/
 
+            roomService.checkIn(4L, 2L);
+
+        }
 
 
 
 
     }
-}
+

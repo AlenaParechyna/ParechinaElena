@@ -2,19 +2,15 @@ package com.senla.dao;
 
 import com.senla.api.dao.IGenericDao;
 import com.senla.model.AEntity;
-import com.senla.model.Room;
 
 
 import java.util.*;
-import java.util.Comparator;
 
 public abstract class AbstractDao<T extends AEntity> implements IGenericDao<T> {
 
     private List<T> repository = new ArrayList<>();
 
-    public void setRepository(List<T> repository) {
-        this.repository = repository;
-    }
+
 
     public List<T> getRepository() {
         return repository;
@@ -38,34 +34,50 @@ public abstract class AbstractDao<T extends AEntity> implements IGenericDao<T> {
     }
 
     @Override
+
     public List<T> getAll() {
-        return null;
+
+        for (int i =0; i<repository.size(); i++){
+
+
+
+        }
+        return repository;
+
     }
 
     @Override
-    public void delete(T entity) {
 
+    public List<T> sortedAs() {
+
+        return repository;
+    }
+
+    //поменяла
+    @Override
+    public void delete(T entity) {
+        for (int i = 0; i < repository.size(); i++) {
+            if (entity.getId().equals(repository.get(i).getId())) {
+                repository.remove(i);
+
+            }
+        }
     }
 
     @Override
     public T update(T entity) {
-        return null;
-    }
-
-    //показать весь репозиторий номера
-    public void showAll() {
-        for (T entity : repository
-        ) {
-            System.out.println(repository.toString());
-
-        }
-
-
+        return entity;
             }
-
-
-
 }
+
+
+
+
+
+
+
+
+
 
 
 

@@ -6,5 +6,5 @@ import java.time.Instant;
 
 public interface IGuestService {
 
-    Guest addGuest(String name, Integer age);
+    Guest addGuest(Long id, String name, Integer age);
 }

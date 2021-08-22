@@ -12,21 +12,24 @@ import java.util.Date;
 public class SortedAs{
 
     // Сортировка по цене
-    public Comparator<Room> compPrice = Comparator.comparing(Room::getPriceRoom);
+    public Comparator<Room> comparePrice = Comparator.comparing(Room::getPriceRoom);
     // Сортировка по вместимости
-    public Comparator<Room> compCapasity = Comparator.comparing(Room::getCapacity);
+    public Comparator<Room> compareCapacity = Comparator.comparing(Room::getCapacity);
     // Сортировка по количеству звезд
-    public Comparator<Room> compStars = Comparator.comparing(Room::getStars);
+    public Comparator<Room> compareStars = Comparator.comparing(Room::getStars);
     // Сортировка по номеру комнаты
     public Comparator<Room> roomComparator = Comparator.comparing(Room::getNumber);
     // Сортировка по имени гостя
-    public Comparator<Guest> compName = Comparator.comparing(Guest::getName);
-    // Сортировка по дате освобождения
-    public Comparator<Order> compDate = Comparator.comparing(Order::getDateCheckOut);
+    public Comparator<Guest> compareName = Comparator.comparing(Guest::getName);
+
+    public Comparator<Guest> compareId = Comparator.comparing(Guest::getId);
+    // Сортировка по дате заселения
+        public Comparator<Order> compareDate = Comparator.comparing(Order::getDateCheckIn);
     // Сортировка по цене услуг
-    public Comparator<Maintenance> compPriceM = Comparator.comparing(Maintenance::getPrice);
+    public Comparator<Maintenance> comparePriceMaintenance = Comparator.comparing(Maintenance::getPrice);
     // Сортировка по дате услуг
-    public Comparator<Maintenance> compDateM = Comparator.comparing(Maintenance::getDate);
+    public Comparator<Maintenance> compareDateMaintenance = Comparator.comparing(Maintenance::getDate);
+
 
 
     }

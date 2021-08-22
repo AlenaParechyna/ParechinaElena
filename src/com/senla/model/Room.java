@@ -1,14 +1,19 @@
 package com.senla.model;
 
+import com.senla.util.IdGenerator;
+
 import java.util.List;
 
 public class Room extends AEntity {
 
+    private Long id;
     private Integer number;
     private Integer capacity;
     private RoomStatus status;
-    private Guest guests;
-    private Double priceRoom;
+    private Guest guest;
+    private Double price;
+    private Integer stars;
+    private List<Maintenance>roomMaintenance;
 
     public Room() {
 
@@ -16,7 +21,7 @@ public class Room extends AEntity {
     public Integer getStars() {
         return stars;
     }
-    private Integer stars;
+
     public  RoomStatus roomStatus(){
         return null;
     }
@@ -25,21 +30,23 @@ public class Room extends AEntity {
     @Override
     public String toString() {
         return "Room{" +
-                "number=" + number +
+                "id="+ getId() +
+                ", number=" + number +
                 ", capacity=" + capacity +
                 ", status=" + status +
-                ", guests=" + guests +
-                ", priceRoom=" + priceRoom +
+                ", guests=" + guest +
+                ", priceRoom=" + price +
                 ", stars=" + stars +
                 '}';
     }
 
-    public Room(Integer number, Integer capacity, RoomStatus status, Guest guests, Double priceRoom, Integer stars) {
+    public Room(Long id, Integer number, Integer capacity, RoomStatus status, Guest guest, Double priceRoom, Integer stars) {
+       this.id=id;
         this.number = number;
         this.capacity = capacity;
         this.status = status;
-        this.guests =  guests;
-        this.priceRoom=priceRoom;
+        this.guest =  guest;
+        this.price=priceRoom;
         this.stars=stars;
     }
 
@@ -68,16 +75,28 @@ public class Room extends AEntity {
     }
 
     public Guest getGuests() {
-        return guests;
+        return guest;
     }
 
-    public void setGuests(Guest guests) {
-        this.guests = guests;
+    public void setGuests(Guest guest) {
+        this.guest = guest;
     }
 
     public Double getPriceRoom() {
-         return priceRoom;
+         return price;
 }
 
 
+
+
+    @Override
+    public void setId(Long id) {
+       id = IdGenerator.generateRoomId();
+       this.id = id;
     }
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+}
