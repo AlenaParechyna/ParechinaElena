@@ -2,6 +2,7 @@ package com.senla.api.dao;
 
 import com.senla.model.AEntity;
 
+
 import java.io.IOException;
 import java.util.List;
 

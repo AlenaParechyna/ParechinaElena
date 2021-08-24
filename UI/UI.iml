@@ -7,8 +7,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Hotel" />
-    <orderEntry type="library" name="org.slf4j:slf4j-api:1.7.25" level="application" />
-    <orderEntry type="library" name="org.slf4j:slf4j-log4j12:1.7.25" level="application" />
+    <orderEntry type="module" module-name="ParechinaElena_new" />
   </component>
 </module>

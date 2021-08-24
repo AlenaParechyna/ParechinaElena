@@ -2,7 +2,7 @@ package com.senla.menu;
 
 import com.senla.actions.CheckIn;
 import com.senla.actions.IAction;
-import com.senla.util.MyFileHandler;
+
 
 import java.io.IOException;
 import java.util.List;
@@ -40,9 +40,6 @@ public class Navigator {
 
     public void navigate(Integer index){
 
-        try {
-            MyFileHandler myFileHandler = new MyFileHandler("C:/Users/user/IdeaProjects/Hotel/src/com/senla/logging/myLogger.txt");
-
 
             if (currentMenu != null) {
                 MenuItem menuItem = currentMenu.getMenuItems().get(index);
@@ -50,12 +47,10 @@ public class Navigator {
                 currentMenu = menuItem.getNextMenu();
 
             }
-        }catch (IndexOutOfBoundsException | IOException e){
 
 
 }
 
-    }
 
 
 }
