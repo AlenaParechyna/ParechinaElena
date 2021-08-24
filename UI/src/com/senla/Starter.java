@@ -1,8 +1,8 @@
 package com.senla;
 
 import com.senla.menu.MenuController;
-import org.apache.log4j.Appender;
-import org.apache.log4j.PropertyConfigurator;
+//import org.apache.log4j.Appender;
+//import org.apache.log4j.PropertyConfigurator;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

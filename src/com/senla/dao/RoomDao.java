@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.senla.util.IdGenerator;
-import org.omg.CORBA.FREE_MEM;
+
 
 public class RoomDao extends AbstractDao<Room> implements IRoomDao {
 
